@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -72,6 +73,26 @@ public class JogadorServiceImpl implements JogadorService {
 	@Override
 	public void imprimirListaDeJogadores(List<Jogador> jogadores) {
 		jogadores.forEach(System.out::println);
+	}
+
+	@Override
+	public List<Jogador> getListaArtilheiros(List<Jogador> jogadores) {
+		List<Jogador> artilheiros = jogadores.stream()
+								.sorted(Comparator.comparing(Jogador::getGolsMarcados).reversed())
+								.limit(3)
+								.collect(Collectors.toList());
+		
+		return artilheiros;
+	}
+
+	@Override
+	public double getMediaDasIdades(List<Jogador> jogadores) {
+		double media = jogadores.stream()
+				.mapToDouble(jogador -> jogador.getIdade())
+				.average()
+				.getAsDouble();
+		
+		return media;
 	}
 
 }

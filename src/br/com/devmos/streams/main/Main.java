@@ -21,6 +21,11 @@ public class Main {
 			System.out.println("Arquivo n�o encontrado");
 		}else {
 			jogImpl.imprimirListaDeJogadores(listaDeJogadores);
+			
+			System.out.println(jogImpl.getListaArtilheiros(listaDeJogadores));
+			
+			System.out.println("A media das idades é " + jogImpl.getMediaDasIdades(listaDeJogadores));
+
 		}
 	}
 

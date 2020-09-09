@@ -14,10 +14,15 @@ import br.com.devmos.stream.service.JogadorServiceImpl;
 public class JogadorTest {
 	
 	JogadorServiceImpl jogImpl;
+	List<Jogador>  listaJogadores;
 	
 	@Before
 	public void init() {
 		jogImpl = new JogadorServiceImpl();
+		
+		listaJogadores = Arrays.asList(new Jogador("Messi", "Meia", 32, "Barcelona", 765),
+				new Jogador("Zidane", "Atacante", 40, "Real Madrid", 345),
+				new Jogador("Kross", "Meia", 18, "Barcelona", 124));
 	}
 
 	@Test
@@ -37,12 +42,16 @@ public class JogadorTest {
 
 		List<Jogador> jogadores = Arrays.asList(j1, j2, j3);
 		
-		Jogador jogador = jogadores.stream()
-								.max(Comparator.comparing(Jogador::getIdade))
-								.get(); 
-
 		Assert.assertEquals(j1, jogImpl.getJogadorMaisVelho(jogadores));
 
+	}
+	
+	@Test
+	public void testeMediaDaIdadeDosJogadores() {
+		
+		double mediaDasIdades = jogImpl.getMediaDasIdades(listaJogadores);
+		
+		Assert.assertEquals(30, mediaDasIdades, 0.001);
 	}
 
 }
