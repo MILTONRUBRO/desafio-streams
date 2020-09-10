@@ -25,6 +25,10 @@ public class Main {
 			System.out.println(jogImpl.getListaArtilheiros(listaDeJogadores));
 			
 			System.out.println("A media das idades é " + jogImpl.getMediaDasIdades(listaDeJogadores));
+			
+			System.out.println("A media de gols é " + jogImpl.getMediaDeGols(listaDeJogadores));
+			
+			System.out.println("O tal de gols do Palmeiras é " + jogImpl.getGolsMarcadosPorTime(listaDeJogadores, "Palmeiras"));
 
 		}
 	}

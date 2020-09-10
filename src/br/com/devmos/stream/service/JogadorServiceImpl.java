@@ -94,5 +94,30 @@ public class JogadorServiceImpl implements JogadorService {
 		
 		return media;
 	}
+	
+	@Override
+	public double getMediaDeGols(List<Jogador> jogadores) {
+		return jogadores.parallelStream()
+				.mapToDouble(Jogador::getGolsMarcados)
+				.average()
+				.getAsDouble();
+		
+	}
 
+	@Override
+	public int getQuantidadeGols(List<Jogador> jogadores) {
+		return jogadores.stream()
+					.mapToInt(jogador -> jogador.getGolsMarcados())
+					.sum();
+	}
+
+	@Override
+	public int getGolsMarcadosPorTime(List<Jogador> jogadores, String time) {
+		return jogadores.stream()
+					.filter(jogador -> jogador.getTimeAtual().equals(time))
+					.mapToInt(Jogador::getGolsMarcados)
+					.sum();
+		
+	}
+	
 }

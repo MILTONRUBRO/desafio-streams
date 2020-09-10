@@ -12,14 +12,14 @@ import br.com.devmos.stream.model.Jogador;
 import br.com.devmos.stream.service.JogadorServiceImpl;
 
 public class JogadorTest {
-	
+
 	JogadorServiceImpl jogImpl;
-	List<Jogador>  listaJogadores;
-	
+	List<Jogador> listaJogadores;
+
 	@Before
 	public void init() {
 		jogImpl = new JogadorServiceImpl();
-		
+
 		listaJogadores = Arrays.asList(new Jogador("Messi", "Meia", 32, "Barcelona", 765),
 				new Jogador("Zidane", "Atacante", 40, "Real Madrid", 345),
 				new Jogador("Kross", "Meia", 18, "Barcelona", 124));
@@ -41,17 +41,42 @@ public class JogadorTest {
 		Jogador j3 = new Jogador("Cristiano Ronaldo", "Atacante", 21, "Manchester", 23);
 
 		List<Jogador> jogadores = Arrays.asList(j1, j2, j3);
-		
+
 		Assert.assertEquals(j1, jogImpl.getJogadorMaisVelho(jogadores));
 
 	}
-	
+
 	@Test
 	public void testeMediaDaIdadeDosJogadores() {
-		
+
 		double mediaDasIdades = jogImpl.getMediaDasIdades(listaJogadores);
-		
+
 		Assert.assertEquals(30, mediaDasIdades, 0.001);
+	}
+
+	@Test
+	public void testeQuantidadeDeGolsMarcados() {
+		int total = jogImpl.getQuantidadeGols(listaJogadores);
+
+		Assert.assertEquals(1234, total);
+	}
+
+	@Test
+	public void testeMediaDeGolsMarcados() {
+		double media = jogImpl.getMediaDeGols(listaJogadores);
+
+		Assert.assertEquals(411.333333, media, 0.001);
+	}
+	
+	@Test
+	public void testeQuantidadeDeGolsPorTime() {
+		int total = jogImpl.getGolsMarcadosPorTime(listaJogadores, "Barcelona");
+		int total2 = jogImpl.getGolsMarcadosPorTime(listaJogadores, "");
+
+		
+		Assert.assertEquals(889, total);
+		Assert.assertEquals(0, total2);
+		
 	}
 
 }
