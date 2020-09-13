@@ -30,7 +30,10 @@ public class Main {
 			
 			System.out.println("O tal de gols do Palmeiras é " + jogImpl.getGolsMarcadosPorTime(listaDeJogadores, "Palmeiras"));
 			
-			System.out.println("Buscando jogador " + jogImpl.buscarJogadorPeloNome(listaDeJogadores, "willian"));
+			System.out.println("Buscando jogador " + jogImpl.buscarJogadorPeloNome(listaDeJogadores, "william"));
+		
+			System.out.println("Artilheiro da Chapecoense " + jogImpl.buscarArtilheiroDoTime(listaDeJogadores, "Chapecoense"));
+
 		}
 	}
 

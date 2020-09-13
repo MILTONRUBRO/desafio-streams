@@ -144,5 +144,12 @@ public class JogadorServiceImpl implements JogadorService {
 				.max(Comparator.comparing(Jogador::getGolsMarcados))
 				.orElseThrow(NoSuchElementException::new);
 	}
+
+	@Override
+	public List<Jogador> getListaJogadoresTime(List<Jogador> jogadores, String time) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
+				.collect(Collectors.toList());
+	}
 	
 }

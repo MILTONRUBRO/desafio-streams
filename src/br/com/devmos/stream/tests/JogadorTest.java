@@ -103,7 +103,17 @@ public class JogadorTest {
 		
 		Assert.assertEquals(j1, j2);
 
-
+	}
+	
+	@Test
+	public void testaListaDejogadoresPorTime() {
+		
+		List<Jogador> jogadoresTeste = Arrays.asList(new Jogador("Messi", "Meia", 32, "Barcelona", 765),
+				new Jogador("Kross", "Meia", 18, "Barcelona", 124));
+		
+		List<Jogador> jogadores = jogImpl.getListaJogadoresTime(listaJogadores, "Barcelona");
+		
+		Assert.assertEquals(jogadoresTeste, jogadores);
 	}
 
 }
