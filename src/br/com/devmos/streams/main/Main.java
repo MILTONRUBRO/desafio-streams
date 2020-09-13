@@ -29,7 +29,8 @@ public class Main {
 			System.out.println("A media de gols é " + jogImpl.getMediaDeGols(listaDeJogadores));
 			
 			System.out.println("O tal de gols do Palmeiras é " + jogImpl.getGolsMarcadosPorTime(listaDeJogadores, "Palmeiras"));
-
+			
+			System.out.println("Buscando jogador " + jogImpl.buscarJogadorPeloNome(listaDeJogadores, "willian"));
 		}
 	}
 

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -118,6 +118,31 @@ public class JogadorServiceImpl implements JogadorService {
 					.mapToInt(Jogador::getGolsMarcados)
 					.sum();
 		
+	}
+
+	@Override
+	public Jogador getJogadorMaisJovem(List<Jogador> jogadores) {
+		//comparator sem method reference
+		return jogadores.stream()
+				.min((j1, j2) -> Integer.compare(j1.getIdade(), j2.getIdade()))
+				.orElseThrow(NoSuchElementException::new);
+				
+	}
+
+	@Override
+	public Jogador buscarJogadorPeloNome(List<Jogador> jogadores, String nome) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getNome().equalsIgnoreCase(nome))
+				.findFirst()
+				.orElseThrow(NoSuchElementException::new);
+	}
+
+	@Override
+	public Jogador buscarArtilheiroDoTime(List<Jogador> jogadores, String time) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
+				.max(Comparator.comparing(Jogador::getGolsMarcados))
+				.orElseThrow(NoSuchElementException::new);
 	}
 	
 }

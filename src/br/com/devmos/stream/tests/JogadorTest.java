@@ -78,5 +78,32 @@ public class JogadorTest {
 		Assert.assertEquals(0, total2);
 		
 	}
+	
+	@Test
+	public void testeGetJogadorMaisNovo() {
+		Jogador jogador = new Jogador("Kross", "Meia", 18, "Barcelona", 124);
+		Jogador j1 = jogImpl.getJogadorMaisJovem(listaJogadores);
+		
+		Assert.assertEquals(jogador, j1);
+	}
+	
+	@Test
+	public void testeBuscarJogadorPeloNome() {
+		Jogador j1 = new Jogador("Messi", "Meia", 32, "Barcelona", 765);
+
+		Jogador j2 = jogImpl.buscarJogadorPeloNome(listaJogadores, "messi");
+		
+		Assert.assertEquals(j1, j2);
+	}
+	
+	@Test
+	public void testaBuscaDoArtilheiroDoTime() {
+		Jogador j1 = new Jogador("Messi", "Meia", 32, "Barcelona", 765);
+		Jogador j2 = jogImpl.buscarArtilheiroDoTime(listaJogadores, "Barcelona");
+		
+		Assert.assertEquals(j1, j2);
+
+
+	}
 
 }

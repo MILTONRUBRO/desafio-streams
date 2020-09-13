@@ -12,6 +12,9 @@ public interface JogadorService {
 	void imprimirJogadorMaisVelho(List<Jogador> jogadores);
 	List<Jogador> getListaDeJogadores(Path caminho) throws IOException;
 	Jogador getJogadorMaisVelho(List<Jogador> jogadores);
+	Jogador getJogadorMaisJovem(List<Jogador> jogadores);
+	Jogador buscarJogadorPeloNome(List<Jogador> jogadores, String nome);
+	Jogador buscarArtilheiroDoTime(List<Jogador> jogadores, String time);
 	void imprimirListaDeJogadores(List<Jogador> jogadores);
 	List<Jogador> getListaArtilheiros(List<Jogador> jogadores);
 	double getMediaDasIdades(List<Jogador> jogadores);
