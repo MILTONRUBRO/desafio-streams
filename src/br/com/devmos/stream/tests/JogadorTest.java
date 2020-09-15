@@ -115,5 +115,16 @@ public class JogadorTest {
 		
 		Assert.assertEquals(jogadoresTeste, jogadores);
 	}
+	
+	@Test
+	public void testaListaDeJogadoresOrdenadaPeloNome() {
+		
+		List<Jogador> listaJogadoresOrdenada =   Arrays.asList(new Jogador("Kross", "Meia", 18, "Barcelona", 124),
+				new Jogador("Messi", "Meia", 32, "Barcelona", 765),
+				new Jogador("Zidane", "Atacante", 40, "Real Madrid", 345));
+		
+		Assert.assertEquals(listaJogadoresOrdenada, jogImpl.getJogadoresOrdenadosPeloNome(listaJogadoresOrdenada));
+		
+	}
 
 }
