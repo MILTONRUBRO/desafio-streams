@@ -15,6 +15,7 @@ public class JogadorTest {
 
 	JogadorServiceImpl jogImpl;
 	List<Jogador> listaJogadores;
+	List<Jogador> listaJogadoresOrdenadaPeloTime;
 
 	@Before
 	public void init() {
@@ -23,6 +24,10 @@ public class JogadorTest {
 		listaJogadores = Arrays.asList(new Jogador("Messi", "Meia", 32, "Barcelona", 765),
 				new Jogador("Zidane", "Atacante", 40, "Real Madrid", 345),
 				new Jogador("Kross", "Meia", 18, "Barcelona", 124));
+		
+		listaJogadoresOrdenadaPeloTime = Arrays.asList(new Jogador("Messi", "Meia", 32, "Barcelona", 765),
+				new Jogador("Kross", "Meia", 18, "Barcelona", 124),
+				new Jogador("Zidane", "Atacante", 40, "Real Madrid", 345));
 	}
 
 	@Test
@@ -125,6 +130,14 @@ public class JogadorTest {
 		
 		Assert.assertEquals(listaJogadoresOrdenada, jogImpl.getJogadoresOrdenadosPeloNome(listaJogadoresOrdenada));
 		
+	}
+	
+	@Test
+	public void testaListaDeJogadoresOrganizadaPeloTime() {
+		
+		List<Jogador> jogadores = jogImpl.getJogadoresOrdenadosPeloTime(listaJogadores);
+		
+		Assert.assertEquals(listaJogadoresOrdenadaPeloTime, jogadores);
 	}
 
 }

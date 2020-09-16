@@ -34,6 +34,8 @@ public class Main {
 		
 			System.out.println("Artilheiro da Chapecoense " + jogImpl.buscarArtilheiroDoTime(listaDeJogadores, "Chapecoense"));
 
+			System.out.println("Jogadores do Cruzeiro " + jogImpl.getListaJogadoresTime(listaDeJogadores, "Cruzeiro"));
+			
 		}
 	}
 
