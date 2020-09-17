@@ -139,5 +139,13 @@ public class JogadorTest {
 		
 		Assert.assertEquals(listaJogadoresOrdenadaPeloTime, jogadores);
 	}
+	
+	@Test
+	public void testaListaDeJogadoresOrganizadaPeloNumeroDeGols() {
+		List<Jogador> jogadoresOrganizadosNumeroGols = jogImpl.getJogadoresOrdenadosPeloNumeroGols(listaJogadores);
+		
+		//minha lista já esta organizada
+		Assert.assertEquals(listaJogadores, jogadoresOrganizadosNumeroGols);
+	}
 
 }

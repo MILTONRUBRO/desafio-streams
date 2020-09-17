@@ -166,5 +166,12 @@ public class JogadorServiceImpl implements JogadorService {
 				.sorted((j1, j2) -> j1.getTimeAtual().compareTo(j2.getTimeAtual()) )
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public List<Jogador> getJogadoresOrdenadosPeloNumeroGols(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.sorted(Comparator.comparing(Jogador::getGolsMarcados).reversed())
+				.collect(Collectors.toList());
+	}
 	
 }
