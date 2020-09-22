@@ -147,5 +147,14 @@ public class JogadorTest {
 		//minha lista já esta organizada
 		Assert.assertEquals(listaJogadores, jogadoresOrganizadosNumeroGols);
 	}
+	
+	@Test
+	public void testaBuscarArtilheiro() {
+		Jogador j1 = new Jogador("Messi", "Meia", 32, "Barcelona", 765);
+		Jogador j2 = jogImpl.buscarArtilheiro(listaJogadores);
+		
+		Assert.assertEquals(j1, j2);
+
+	}
 
 }

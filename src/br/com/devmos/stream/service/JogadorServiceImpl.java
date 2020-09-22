@@ -173,5 +173,12 @@ public class JogadorServiceImpl implements JogadorService {
 				.sorted(Comparator.comparing(Jogador::getGolsMarcados).reversed())
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public Jogador buscarArtilheiro(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.max(Comparator.comparing(Jogador::getGolsMarcados))
+				.orElseThrow(NoSuchElementException::new);
+	}
 	
 }
