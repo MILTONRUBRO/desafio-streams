@@ -67,7 +67,7 @@ public class JogadorServiceImpl implements JogadorService {
 	
 	@Override
 	public Jogador getJogadorMaisVelho(List<Jogador> jogadores) {
-		Jogador jogador = jogadores.stream().max(Comparator.comparing(Jogador::getIdade)).get();
+		Jogador jogador = jogadores.stream().max(Comparator.comparingInt(Jogador::getIdade)).get();
 		return jogador;
 	}
 
@@ -79,7 +79,7 @@ public class JogadorServiceImpl implements JogadorService {
 	@Override
 	public List<Jogador> getListaArtilheiros(List<Jogador> jogadores) {
 		List<Jogador> artilheiros = jogadores.stream()
-								.sorted(Comparator.comparing(Jogador::getGolsMarcados).reversed())
+								.sorted(Comparator.comparingInt(Jogador::getGolsMarcados).reversed())
 								.limit(3)
 								.collect(Collectors.toList());
 		
@@ -142,7 +142,7 @@ public class JogadorServiceImpl implements JogadorService {
 	public Jogador buscarArtilheiroDoTime(List<Jogador> jogadores, String time) {
 		return jogadores.stream()
 				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
-				.max(Comparator.comparing(Jogador::getGolsMarcados))
+				.max(Comparator.comparingInt(Jogador::getGolsMarcados))
 				.orElseThrow(NoSuchElementException::new);
 	}
 
@@ -170,15 +170,21 @@ public class JogadorServiceImpl implements JogadorService {
 	@Override
 	public List<Jogador> getJogadoresOrdenadosPeloNumeroGols(List<Jogador> jogadores) {
 		return jogadores.stream()
-				.sorted(Comparator.comparing(Jogador::getGolsMarcados).reversed())
+				.sorted(Comparator.comparingInt(Jogador::getGolsMarcados).reversed())
 				.collect(Collectors.toList());
 	}
 
 	@Override
 	public Jogador buscarArtilheiro(List<Jogador> jogadores) {
 		return jogadores.stream()
-				.max(Comparator.comparing(Jogador::getGolsMarcados))
+				.max(Comparator.comparingInt(Jogador::getGolsMarcados))
 				.orElseThrow(NoSuchElementException::new);
+	}
+
+	@Override
+	public List<Jogador> getListaJogadoresComGols(List<Jogador> jogadores) {
+		 jogadores.removeIf(jogador -> jogador.getGolsMarcados() < 1);
+		 return jogadores;
 	}
 	
 }

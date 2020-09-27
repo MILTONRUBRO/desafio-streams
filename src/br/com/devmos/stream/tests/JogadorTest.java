@@ -1,5 +1,6 @@
 package br.com.devmos.stream.tests;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -153,7 +154,28 @@ public class JogadorTest {
 		Jogador j1 = new Jogador("Messi", "Meia", 32, "Barcelona", 765);
 		Jogador j2 = jogImpl.buscarArtilheiro(listaJogadores);
 		
+		
 		Assert.assertEquals(j1, j2);
+
+	}
+	
+	@Test
+	public void testaListaDeJogadoresComPeloMenosUmGol() {
+		
+		List<Jogador> jogadoresTeste =  new ArrayList<Jogador>(){{
+				add(new Jogador("Messi", "Meia", 32, "Barcelona", 765));
+				add(new Jogador("Zidane", "Atacante", 40, "Real Madrid", 345));
+				add(new Jogador("Kross", "Meia", 18, "Barcelona", 124));
+				add(new Jogador("Suarez", "Atacante", 33, "Atletico", 0));
+				add(new Jogador("Tiao", "Atacante", 33, "Atletico", 0));
+
+				
+		}};
+		
+		List<Jogador> jogadores = jogImpl.getListaJogadoresComGols(jogadoresTeste);
+
+		
+		Assert.assertEquals(listaJogadores, jogadores);
 
 	}
 
