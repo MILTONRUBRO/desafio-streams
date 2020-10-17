@@ -3,6 +3,7 @@ package br.com.devmos.stream.service;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Set;
 
 import br.com.devmos.stream.model.Jogador;
 
@@ -18,6 +19,7 @@ public interface JogadorService {
 	List<Jogador> getJogadoresOrdenadosPeloTime(List<Jogador> jogadores);
 	List<Jogador> getJogadoresOrdenadosPeloNumeroGols(List<Jogador> jogadores);
 	List<Jogador> getListaJogadoresComGols(List<Jogador> jogadores);
+	Set<String> getListaTimes(List<Jogador> jogadores);
 	Jogador getJogadorMaisVelho(List<Jogador> jogadores);
 	Jogador getJogadorMaisJovem(List<Jogador> jogadores);
 	Jogador buscarJogadorPeloNome(List<Jogador> jogadores, String nome);
@@ -27,4 +29,5 @@ public interface JogadorService {
 	double getMediaDeGols(List<Jogador> jogadores);
 	int getQuantidadeGols(List<Jogador> jogadores);
 	int getGolsMarcadosPorTime(List<Jogador> jogadores, String time);
+
 }
