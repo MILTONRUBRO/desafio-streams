@@ -25,6 +25,7 @@ public interface JogadorService {
 	Jogador buscarJogadorPeloNome(List<Jogador> jogadores, String nome);
 	Jogador buscarArtilheiroDoTime(List<Jogador> jogadores, String time);
 	Jogador buscarArtilheiro(List<Jogador> jogadores);
+	Jogador buscarJogadorComMaisAssistencia(List<Jogador> jogadores);
 	double getMediaDasIdades(List<Jogador> jogadores);
 	double getMediaDeGols(List<Jogador> jogadores);
 	int getQuantidadeGols(List<Jogador> jogadores);

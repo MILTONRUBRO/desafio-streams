@@ -50,6 +50,7 @@ public class JogadorServiceImpl implements JogadorService {
 			jogador.setIdade(Integer.parseInt(info[2]));
 			jogador.setTimeAtual(info[3]);
 			jogador.setGolsMarcados(Integer.parseInt(info[4]));
+			jogador.setAssistencias(Integer.parseInt(info[5]));
 
 			listaDeJogadores.add(jogador);
 		}
@@ -193,6 +194,14 @@ public class JogadorServiceImpl implements JogadorService {
 		return jogadores.stream()
 				.map(Jogador::getTimeAtual)
 				.collect(Collectors.toSet());
+	}
+
+	@Override
+	public Jogador buscarJogadorComMaisAssistencia(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.max(Comparator.comparing(Jogador::getAssistencias))
+				.orElseThrow(NoSuchElementException::new);
+				
 	}
 
 }

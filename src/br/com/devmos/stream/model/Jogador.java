@@ -7,6 +7,7 @@ public class Jogador {
 	private int idade;
 	private String timeAtual;
 	private int golsMarcados;
+	private int assistencias;
 
 	public String getNome() {
 		return nome;
@@ -47,6 +48,14 @@ public class Jogador {
 	public void setGolsMarcados(int golsMarcados) {
 		this.golsMarcados = golsMarcados;
 	}
+	
+	public int getAssistencias() {
+		return assistencias;
+	}
+
+	public void setAssistencias(int assistencias) {
+		this.assistencias = assistencias;
+	}
 
 	public Jogador(String nome, String posicao, int idade, String timeAtual, int golsMarcados) {
 		this.nome = nome;
@@ -60,13 +69,12 @@ public class Jogador {
 	public Jogador() {
 
 	}
-	
-	
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + assistencias;
 		result = prime * result + golsMarcados;
 		result = prime * result + idade;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
@@ -84,6 +92,8 @@ public class Jogador {
 		if (getClass() != obj.getClass())
 			return false;
 		Jogador other = (Jogador) obj;
+		if (assistencias != other.assistencias)
+			return false;
 		if (golsMarcados != other.golsMarcados)
 			return false;
 		if (idade != other.idade)
@@ -109,6 +119,7 @@ public class Jogador {
 	@Override
 	public String toString() {
 		return "Jogador [nome=" + nome + ", posicao=" + posicao + ", idade=" + idade + ", timeAtual=" + timeAtual
-				+ ", golsMarcados=" + golsMarcados + "]";
+				+ ", golsMarcados=" + golsMarcados + ", assistencias=" + assistencias + "]";
 	}
+	
 }

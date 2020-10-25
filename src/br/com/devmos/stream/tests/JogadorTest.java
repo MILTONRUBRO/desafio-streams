@@ -3,7 +3,9 @@ package br.com.devmos.stream.tests;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -177,6 +179,16 @@ public class JogadorTest {
 		
 		Assert.assertEquals(listaJogadores, jogadores);
 
+	}
+	
+	@Test
+	public void testaListaTimes() {
+		Set<String> listaTimes = jogImpl.getListaTimes(listaJogadores);
+		Set<String> listaTimesAtual =  new HashSet<>();
+		listaTimesAtual.add("Barcelona");
+		listaTimesAtual.add("Real Madrid");
+		
+		Assert.assertEquals(listaTimesAtual, listaTimes);
 	}
 
 }
