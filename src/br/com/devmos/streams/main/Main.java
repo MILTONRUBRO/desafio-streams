@@ -38,6 +38,8 @@ public class Main {
 			
 			System.out.println("Lista de Jogadores com mais assistência " + jogImpl.getListaMaioresAssistentes(listaDeJogadores));
 
+			System.out.println("Maior Assistente do Santos " + jogImpl.buscarMaiorAssistenteDoTime(listaDeJogadores, "Santos"));
+
 		}
 	}
 

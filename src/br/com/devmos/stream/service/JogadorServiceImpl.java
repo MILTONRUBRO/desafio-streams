@@ -214,4 +214,14 @@ public class JogadorServiceImpl implements JogadorService {
 				.collect(Collectors.toList());
 	}
 
+	@Override
+	public Jogador buscarMaiorAssistenteDoTime(List<Jogador> jogadores, String time) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
+				.max(Comparator.comparingInt(Jogador::getAssistencias))
+				.orElseThrow(NoSuchElementException::new);
+	}
+	
+	
+
 }
