@@ -204,4 +204,14 @@ public class JogadorServiceImpl implements JogadorService {
 				
 	}
 
+	@Override
+	public List<Jogador> getListaMaioresAssistentes(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.sorted(Comparator.comparingInt(Jogador::getAssistencias)
+						.reversed()
+						.thenComparing(Jogador::getGolsMarcados))
+				.limit(10)
+				.collect(Collectors.toList());
+	}
+
 }

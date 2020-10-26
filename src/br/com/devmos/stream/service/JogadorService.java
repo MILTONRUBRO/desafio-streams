@@ -14,6 +14,7 @@ public interface JogadorService {
 	void imprimirListaDeJogadores(List<Jogador> jogadores);
 	List<Jogador> getListaDeJogadores(Path caminho) throws IOException;
 	List<Jogador> getListaArtilheiros(List<Jogador> jogadores);
+	List<Jogador> getListaMaioresAssistentes(List<Jogador> jogadores);
 	List<Jogador> getListaJogadoresTime(List<Jogador> jogadores, String time);
 	List<Jogador> getJogadoresOrdenadosPeloNome(List<Jogador> jogadores);
 	List<Jogador> getJogadoresOrdenadosPeloTime(List<Jogador> jogadores);

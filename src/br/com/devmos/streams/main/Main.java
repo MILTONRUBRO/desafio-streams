@@ -36,6 +36,8 @@ public class Main {
 
 			System.out.println("Jogadores do Cruzeiro " + jogImpl.getListaJogadoresTime(listaDeJogadores, "Cruzeiro"));
 			
+			System.out.println("Lista de Jogadores com mais assistência " + jogImpl.getListaMaioresAssistentes(listaDeJogadores));
+
 		}
 	}
 
