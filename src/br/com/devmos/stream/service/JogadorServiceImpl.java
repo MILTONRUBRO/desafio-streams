@@ -221,7 +221,13 @@ public class JogadorServiceImpl implements JogadorService {
 				.max(Comparator.comparingInt(Jogador::getAssistencias))
 				.orElseThrow(NoSuchElementException::new);
 	}
-	
-	
 
+	@Override
+	public List<Jogador> getListaDeAssistentes(List<Jogador> jogadores, long quantidade) {
+		return jogadores.stream()
+				.sorted(Comparator.comparingInt(Jogador::getAssistencias).reversed())
+				.limit(quantidade)
+				.collect(Collectors.toList());
+	}
+	
 }
