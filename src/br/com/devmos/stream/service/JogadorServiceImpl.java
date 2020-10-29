@@ -229,5 +229,12 @@ public class JogadorServiceImpl implements JogadorService {
 				.limit(quantidade)
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public int getQuantidadeAssitencias(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.mapToInt(Jogador::getAssistencias)
+				.sum();
+	}
 	
 }
