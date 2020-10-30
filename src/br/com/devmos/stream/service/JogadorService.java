@@ -33,6 +33,7 @@ public interface JogadorService {
 	double getMediaDeGols(List<Jogador> jogadores);
 	int getQuantidadeGols(List<Jogador> jogadores);
 	int getQuantidadeAssitencias(List<Jogador> jogadores);
+	int getAssitenciasPorTime(List<Jogador> jogadores, String time);
 	int getGolsMarcadosPorTime(List<Jogador> jogadores, String time);
 
 }

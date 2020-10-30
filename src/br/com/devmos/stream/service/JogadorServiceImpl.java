@@ -236,5 +236,13 @@ public class JogadorServiceImpl implements JogadorService {
 				.mapToInt(Jogador::getAssistencias)
 				.sum();
 	}
+
+	@Override
+	public int getAssitenciasPorTime(List<Jogador> jogadores, String time) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
+				.mapToInt(Jogador::getAssistencias)
+				.sum();
+	}
 	
 }
