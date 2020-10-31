@@ -244,5 +244,14 @@ public class JogadorServiceImpl implements JogadorService {
 				.mapToInt(Jogador::getAssistencias)
 				.sum();
 	}
+
+	@Override
+	public List<Jogador> getListaAssistentesPeloNome(List<Jogador> jogadores, String nome) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getNome().contains(nome))
+				.sorted(Comparator.comparingInt(Jogador::getAssistencias)
+						.thenComparing(Comparator.comparing(Jogador::getGolsMarcados)))
+				.collect(Collectors.toList());
+	}
 	
 }
