@@ -253,5 +253,14 @@ public class JogadorServiceImpl implements JogadorService {
 						.thenComparing(Comparator.comparing(Jogador::getGolsMarcados)))
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public List<Jogador> buscarJogadoresPelaQuantidadeGols(List<Jogador> jogadores, int gols) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getGolsMarcados() == gols)
+				.collect(Collectors.toList());
+	}
+	
+	
 	
 }
