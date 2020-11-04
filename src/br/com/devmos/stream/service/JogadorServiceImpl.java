@@ -260,6 +260,13 @@ public class JogadorServiceImpl implements JogadorService {
 				.filter(jogador -> jogador.getGolsMarcados() == gols)
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public List<Jogador> buscarJogadoresPelaQuantidadeAssistencias(List<Jogador> jogadores, int assistencias) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getAssistencias() == assistencias)
+				.collect(Collectors.toList());
+	}
 	
 	
 	

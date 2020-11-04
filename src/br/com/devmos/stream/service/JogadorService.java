@@ -23,6 +23,7 @@ public interface JogadorService {
 	List<Jogador> getListaDeAssistentes(List<Jogador> jogadores, long quantidade);
 	List<Jogador> getListaAssistentesPeloNome(List<Jogador> jogadores, String nome);
 	List<Jogador> buscarJogadoresPelaQuantidadeGols(List<Jogador> jogadores, int gols);
+	List<Jogador> buscarJogadoresPelaQuantidadeAssistencias(List<Jogador> jogadores, int assistencias);
 	Set<String> getListaTimes(List<Jogador> jogadores);
 	Jogador getJogadorMaisVelho(List<Jogador> jogadores);
 	Jogador getJogadorMaisJovem(List<Jogador> jogadores);
