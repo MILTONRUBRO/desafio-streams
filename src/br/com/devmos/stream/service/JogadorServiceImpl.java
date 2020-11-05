@@ -267,6 +267,13 @@ public class JogadorServiceImpl implements JogadorService {
 				.filter(jogador -> jogador.getAssistencias() == assistencias)
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public List<Jogador> buscarJogadoresPelaIdade(List<Jogador> jogadores, int idade) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getIdade() == idade)
+				.collect(Collectors.toList());
+	}
 	
 	
 	
