@@ -40,6 +40,8 @@ public class Main {
 
 			System.out.println("Maior Assistente do Santos " + jogImpl.buscarMaiorAssistenteDoTime(listaDeJogadores, "Santos"));
 
+			System.out.println("Jogadores com 5 gols " + jogImpl.buscarJogadoresPelaQuantidadeGols(listaDeJogadores, 5));
+
 		}
 	}
 

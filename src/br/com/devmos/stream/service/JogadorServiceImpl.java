@@ -258,6 +258,8 @@ public class JogadorServiceImpl implements JogadorService {
 	public List<Jogador> buscarJogadoresPelaQuantidadeGols(List<Jogador> jogadores, int gols) {
 		return jogadores.stream()
 				.filter(jogador -> jogador.getGolsMarcados() == gols)
+				.sorted(Comparator.comparingInt(Jogador::getAssistencias)
+						.thenComparing(Jogador::getNome))
 				.collect(Collectors.toList());
 	}
 
