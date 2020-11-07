@@ -1,43 +1,43 @@
-Hernane,Atacante,29,Sport,3,3
-Lucas Pratto,atacante,27,Atlético-mG,13,2
-Nene,Atacante,33,vasco,8,4
-Ricardo Oliveira,atacante,34,Santos,20,3
-Bruno,Lateral-Direito,23,São Paulo,1,5
-Egídio,Lateral-Esquerdo,27,Palmeiras,3,4
-Renan,Goleiro,33,Goiás,0,0
-Ernando,Zagueiro,31,Internacional,3,2
-Lugano,Zagueiro,35,São Paulo,1,3
-Paolo Guerreiro,atacante,34,Flamengo,8,3
-cicero,Méio-Campo,28,Fluminense,4,3
-Elias,volante,27,Corinthias,7,3
-Arrascaeta,Meio-Campo,30,Cruzeiro,3,5
-Luan,Atacante,23,atlético-mG,8,6
-Mayke,Lateral-Direito,22,Cruzeiro,2,8
-Dedé,Zagueiro,28,Cruzeiro,0,2
-Carlinhos,Lateral-Esquerdo,31,São Paulo,2,4
-Edu Dracena,Zagueiro,33,Palmeiras,4,5
-willians,volante,32,Cruzeiro,2,5
-Marcos Rocha,Lateral-Direito,26,Atlético-MG,6,6
-victor,goleiro,29,Atlético-mg,0,5
-Rogério Ceni,Goleiro,41,São Paulo,7,1
-Marcelo Grohe,Goleiro,29,Grêmio,0,0
-Negueba,Atacante,27,Coritiba,4,3
-Bressan,Zagueiro,22,Grêmio,2,2
-Rever,Zagueiro,29,Internacional,5,3
-Michel Bastos,Meio-Campo,33,São Paulo,7,3
-vitinho,atacante,22,Internacional,11,4
-william,atacante,28,Cruzeiro,11,5
-Apodi,Lateral-Direito,27,Chapecoense,5,7
-Arouca,volante,29,Palmeiras,1,7
-Cristaldo,atacante,31,Palmeiras,5,6
-Vágner Love,atacante,37,Corinthias,14,5
-Lucas Lima,Meio-Campo,25,Santos,7,6
-Rodrigo Caio,volante,22,SãoPaulo,2,6
-Jefferson,Goleiro,34,Botafogo,0,0
-Marcos Guilherme,Meio-Campo,22,atlético-PR,4,4
-Henrique Almeida,atacante,27,Coritiba,12,5
-Thiago Mendes,volante,28,São Paulo,4,3
-Centurión,atacante,27,5ão Paulo,2,4
-Fernando Prass,Goleiro,35,Palmeiras,0,2
-Zé Roberto,Meio-Campo,38,Palmeiras,2,8
-Malcom,Atacante,18,Corinthias,7,2
+Hernane,Atacante,29,Sport,3,3,1
+Lucas Pratto,atacante,27,Atlético-mG,13,2,2
+Nene,Atacante,33,vasco,8,4,2
+Ricardo Oliveira,atacante,34,Santos,20,3,4
+Bruno,Lateral-Direito,23,São Paulo,1,5,2
+Egídio,Lateral-Esquerdo,27,Palmeiras,3,4,3
+Renan,Goleiro,33,Goiás,0,0,3
+Ernando,Zagueiro,31,Internacional,3,2,5
+Lugano,Zagueiro,35,São Paulo,1,3,7
+Paolo Guerreiro,atacante,34,Flamengo,8,3,3
+cicero,Méio-Campo,28,Fluminense,4,3,4
+Elias,volante,27,Corinthias,7,3,2
+Arrascaeta,Meio-Campo,30,Cruzeiro,3,5,2
+Luan,Atacante,23,atlético-mG,8,6,2
+Mayke,Lateral-Direito,22,Cruzeiro,2,8,2
+Dedé,Zagueiro,28,Cruzeiro,0,2,1
+Carlinhos,Lateral-Esquerdo,31,São Paulo,2,4,1
+Edu Dracena,Zagueiro,33,Palmeiras,4,5,3
+willians,volante,32,Cruzeiro,2,5,0
+Marcos Rocha,Lateral-Direito,26,Atlético-MG,6,6,2
+victor,goleiro,29,Atlético-mg,0,5,0
+Rogério Ceni,Goleiro,41,São Paulo,7,1,0
+Marcelo Grohe,Goleiro,29,Grêmio,0,0,0
+Negueba,Atacante,27,Coritiba,4,3,3
+Bressan,Zagueiro,22,Grêmio,2,2,5
+Rever,Zagueiro,29,Internacional,5,3,3
+Michel Bastos,Meio-Campo,33,São Paulo,7,3,3
+vitinho,atacante,22,Internacional,11,4,3
+william,atacante,28,Cruzeiro,11,5,2
+Apodi,Lateral-Direito,27,Chapecoense,5,7,3
+Arouca,volante,29,Palmeiras,1,7,3
+Cristaldo,atacante,31,Palmeiras,5,6,2
+Vágner Love,atacante,37,Corinthias,14,5,2
+Lucas Lima,Meio-Campo,25,Santos,7,6,2
+Rodrigo Caio,volante,22,SãoPaulo,2,6,4
+Jefferson,Goleiro,34,Botafogo,0,0,0
+Marcos Guilherme,Meio-Campo,22,atlético-PR,4,4,4
+Henrique Almeida,atacante,27,Coritiba,12,5,3
+Thiago Mendes,volante,28,São Paulo,4,3,3
+Centurión,atacante,27,5ão Paulo,2,4,5
+Fernando Prass,Goleiro,35,Palmeiras,0,2,4
+Zé Roberto,Meio-Campo,38,Palmeiras,2,8,0
+Malcom,Atacante,18,Corinthias,7,2,2

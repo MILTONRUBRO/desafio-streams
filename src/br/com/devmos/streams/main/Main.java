@@ -42,6 +42,9 @@ public class Main {
 
 			System.out.println("Jogadores com 5 gols " + jogImpl.buscarJogadoresPelaQuantidadeGols(listaDeJogadores, 5));
 
+			System.out.println("Jogadores com mais cartões amarelos " + jogImpl.getListaJogadoresComMaisCartoeAmarelos(listaDeJogadores));
+
+			
 		}
 	}
 

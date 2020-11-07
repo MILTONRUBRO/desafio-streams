@@ -51,7 +51,7 @@ public class JogadorServiceImpl implements JogadorService {
 			jogador.setTimeAtual(info[3]);
 			jogador.setGolsMarcados(Integer.parseInt(info[4]));
 			jogador.setAssistencias(Integer.parseInt(info[5]));
-
+			jogador.setCartoesAmarelo(Integer.parseInt(info[6]));
 			listaDeJogadores.add(jogador);
 		}
 
@@ -218,7 +218,7 @@ public class JogadorServiceImpl implements JogadorService {
 	public Jogador buscarMaiorAssistenteDoTime(List<Jogador> jogadores, String time) {
 		return jogadores.stream()
 				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
-				.max(Comparator.comparingInt(Jogador::getAssistencias))
+				.max(Comparator.comparingInt(Jogador::getAssistencias).reversed())
 				.orElseThrow(NoSuchElementException::new);
 	}
 
@@ -276,7 +276,14 @@ public class JogadorServiceImpl implements JogadorService {
 				.filter(jogador -> jogador.getIdade() == idade)
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public List<Jogador> getListaJogadoresComMaisCartoeAmarelos(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.sorted((j1, j2) -> Integer.compare(j2.getCartoesAmarelo(), j1.getCartoesAmarelo()))
+				.limit(3)
+				.collect(Collectors.toList());
 	
-	
+	}
 	
 }
