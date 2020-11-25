@@ -278,12 +278,20 @@ public class JogadorServiceImpl implements JogadorService {
 	}
 
 	@Override
-	public List<Jogador> getListaJogadoresComMaisCartoeAmarelos(List<Jogador> jogadores) {
+	public List<Jogador> getListaJogadoresComMaisCartoesAmarelos(List<Jogador> jogadores) {
 		return jogadores.stream()
 				.sorted((j1, j2) -> Integer.compare(j2.getCartoesAmarelo(), j1.getCartoesAmarelo()))
 				.limit(3)
 				.collect(Collectors.toList());
 	
+	}
+
+	@Override
+	public double getMediaDeCartoesAmarelos(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.mapToDouble(Jogador::getCartoesAmarelo)
+				.average()
+				.orElse(0);
 	}
 	
 }

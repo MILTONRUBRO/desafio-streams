@@ -21,7 +21,7 @@ public interface JogadorService {
 	List<Jogador> getJogadoresOrdenadosPeloNumeroGols(List<Jogador> jogadores);
 	List<Jogador> getListaJogadoresComGols(List<Jogador> jogadores);
 	List<Jogador> getListaDeAssistentes(List<Jogador> jogadores, long quantidade);
-	List<Jogador> getListaJogadoresComMaisCartoeAmarelos(List<Jogador> jogadores);
+	List<Jogador> getListaJogadoresComMaisCartoesAmarelos(List<Jogador> jogadores);
 	List<Jogador> getListaAssistentesPeloNome(List<Jogador> jogadores, String nome);
 	List<Jogador> buscarJogadoresPelaQuantidadeGols(List<Jogador> jogadores, int gols);
 	List<Jogador> buscarJogadoresPelaQuantidadeAssistencias(List<Jogador> jogadores, int assistencias);
@@ -36,6 +36,7 @@ public interface JogadorService {
 	Jogador buscarMaiorAssistenteDoTime(List<Jogador> jogadores, String time);
 	double getMediaDasIdades(List<Jogador> jogadores);
 	double getMediaDeGols(List<Jogador> jogadores);
+	double getMediaDeCartoesAmarelos(List<Jogador> jogadores);
 	int getQuantidadeGols(List<Jogador> jogadores);
 	int getQuantidadeAssitencias(List<Jogador> jogadores);
 	int getAssitenciasPorTime(List<Jogador> jogadores, String time);
