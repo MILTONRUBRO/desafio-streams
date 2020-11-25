@@ -293,5 +293,12 @@ public class JogadorServiceImpl implements JogadorService {
 				.average()
 				.orElse(0);
 	}
+
+	@Override
+	public int getQuantidadeCartoes(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.mapToInt(Jogador::getCartoesAmarelo)
+				.sum();
+	}
 	
 }
