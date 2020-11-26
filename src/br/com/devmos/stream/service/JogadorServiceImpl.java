@@ -295,10 +295,18 @@ public class JogadorServiceImpl implements JogadorService {
 	}
 
 	@Override
-	public int getQuantidadeCartoes(List<Jogador> jogadores) {
+	public int getQuantidadeCartoesAmarelos(List<Jogador> jogadores) {
 		return jogadores.stream()
 				.mapToInt(Jogador::getCartoesAmarelo)
 				.sum();
+	}
+
+	@Override
+	public Jogador getJogadorComMaisCartoes(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.sorted(Comparator.comparing(Jogador::getCartoesAmarelo).reversed())
+				.findFirst()
+				.orElseThrow(NoSuchElementException::new);
 	}
 	
 }

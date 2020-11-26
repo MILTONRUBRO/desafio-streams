@@ -34,11 +34,12 @@ public interface JogadorService {
 	Jogador buscarArtilheiro(List<Jogador> jogadores);
 	Jogador buscarJogadorComMaisAssistencia(List<Jogador> jogadores);
 	Jogador buscarMaiorAssistenteDoTime(List<Jogador> jogadores, String time);
+	Jogador getJogadorComMaisCartoes(List<Jogador> jogadores);
 	double getMediaDasIdades(List<Jogador> jogadores);
 	double getMediaDeGols(List<Jogador> jogadores);
 	double getMediaDeCartoesAmarelos(List<Jogador> jogadores);
 	int getQuantidadeGols(List<Jogador> jogadores);
-	int getQuantidadeCartoes(List<Jogador> jogadores);
+	int getQuantidadeCartoesAmarelos(List<Jogador> jogadores);
 	int getQuantidadeAssitencias(List<Jogador> jogadores);
 	int getAssitenciasPorTime(List<Jogador> jogadores, String time);
 	int getGolsMarcadosPorTime(List<Jogador> jogadores, String time);
