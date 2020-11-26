@@ -190,5 +190,24 @@ public class JogadorTest {
 		
 		Assert.assertEquals(listaTimesAtual, listaTimes);
 	}
+	
+	@Test
+	public void testaJogadorComMaisCartoesAmarelos() {
+		List<Jogador> jogadoresTeste =  new ArrayList<Jogador>(){{
+			add(new Jogador("Messi", "Meia", 32, "Barcelona", 765,321,34));
+			add(new Jogador("Zidane", "Atacante", 40, "Real Madrid", 345,213,54));
+			add(new Jogador("Kross", "Meia", 18, "Barcelona", 124, 79, 7));
+			add(new Jogador("Suarez", "Atacante", 33, "Atletico", 340, 124,78));
+			add(new Jogador("Tiao", "Atacante", 33, "Atletico", 130,123,6));
+
+			
+		}};
+		
+		Jogador j1 = new  Jogador("Suarez", "Atacante", 33, "Atletico", 340, 124,78);
+		Jogador j2 = jogImpl.getJogadorComMaisCartoes(jogadoresTeste);
+		
+		Assert.assertEquals(j1,j2);
+		
+	}
 
 }

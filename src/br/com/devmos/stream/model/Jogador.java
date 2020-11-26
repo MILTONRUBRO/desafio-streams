@@ -74,6 +74,20 @@ public class Jogador {
 		this.golsMarcados = golsMarcados;
 
 	}
+	
+	
+
+	public Jogador(String nome, String posicao, int idade, String timeAtual, int golsMarcados, int assistencias,
+			int cartoesAmarelo) {
+		super();
+		this.nome = nome;
+		this.posicao = posicao;
+		this.idade = idade;
+		this.timeAtual = timeAtual;
+		this.golsMarcados = golsMarcados;
+		this.assistencias = assistencias;
+		this.cartoesAmarelo = cartoesAmarelo;
+	}
 
 	public Jogador() {
 
