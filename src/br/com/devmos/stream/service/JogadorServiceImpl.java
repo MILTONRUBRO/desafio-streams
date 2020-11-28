@@ -316,5 +316,14 @@ public class JogadorServiceImpl implements JogadorService {
 				.mapToInt(Jogador::getCartoesAmarelo)
 				.sum();
 	}
+
+	@Override
+	public int buscaCartoesAmarelosPorJogador(List<Jogador> jogadores, String nome) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getNome().equalsIgnoreCase(nome))
+				.mapToInt(Jogador::getCartoesAmarelo)
+				.sum();
+				
+	}
 	
 }

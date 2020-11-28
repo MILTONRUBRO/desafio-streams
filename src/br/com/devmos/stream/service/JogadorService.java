@@ -44,5 +44,6 @@ public interface JogadorService {
 	int getAssitenciasPorTime(List<Jogador> jogadores, String time);
 	int getGolsMarcadosPorTime(List<Jogador> jogadores, String time);
 	int getCartoesAmarelosPorTime(List<Jogador> jogadores, String time);
+	int buscaCartoesAmarelosPorJogador(List<Jogador> jogadores, String nome);
 
 }
