@@ -209,5 +209,4 @@ public class JogadorTest {
 		Assert.assertEquals(j1,j2);
 		
 	}
-
 }

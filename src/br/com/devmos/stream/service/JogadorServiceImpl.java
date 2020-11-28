@@ -165,7 +165,7 @@ public class JogadorServiceImpl implements JogadorService {
 	@Override
 	public List<Jogador> getJogadoresOrdenadosPeloTime(List<Jogador> jogadores) {
 		return jogadores.stream()
-				.sorted((j1, j2) -> j1.getTimeAtual().compareTo(j2.getTimeAtual()) )
+				.sorted((j1, j2) -> j1.getTimeAtual().compareTo(j2.getTimeAtual()))
 				.collect(Collectors.toList());
 	}
 
@@ -307,6 +307,14 @@ public class JogadorServiceImpl implements JogadorService {
 				.sorted(Comparator.comparing(Jogador::getCartoesAmarelo).reversed())
 				.findFirst()
 				.orElseThrow(NoSuchElementException::new);
+	}
+
+	@Override
+	public int getCartoesAmarelosPorTime(List<Jogador> jogadores, String time) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
+				.mapToInt(Jogador::getCartoesAmarelo)
+				.sum();
 	}
 	
 }
