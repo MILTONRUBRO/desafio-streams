@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import br.com.devmos.stream.model.Jogador;
+import br.com.devmos.stream.model.Time;
 import br.com.devmos.stream.service.JogadorServiceImpl;
 
 public class Main {
@@ -16,11 +17,13 @@ public class Main {
 		String nomeArquivo = "dados_jogadores.txt";
 		
 		List<Jogador> listaDeJogadores = jogImpl.getListaDeJogadores(Paths.get(enderecoDir + "\\" + nomeArquivo));
-		
+
 		if (!jogImpl.verificarArquivoExiste(Paths.get(enderecoDir))) {
 			System.out.println("Arquivo n�o encontrado");
 		}else {
+			Time santos = new Time("santos", listaDeJogadores);
 			jogImpl.imprimirListaDeJogadores(listaDeJogadores);
+			
 			
 			System.out.println(jogImpl.getListaArtilheiros(listaDeJogadores));
 			
@@ -44,7 +47,7 @@ public class Main {
 
 			System.out.println("Jogadores com mais cartões amarelos " + jogImpl.getListaJogadoresComMaisCartoesAmarelos(listaDeJogadores));
 
-			
+			System.out.println("Santos marcou " + santos.getGolsMarcados() + " gols");
 		}
 	}
 
