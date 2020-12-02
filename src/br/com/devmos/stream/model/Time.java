@@ -1,6 +1,7 @@
 package br.com.devmos.stream.model;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Time {
 	
@@ -9,6 +10,7 @@ public class Time {
 	private int golsMarcados;
 	private int cartoesAmarelos;
 	private int assistencias;
+	private List<Jogador> jogadoresTime;
 	
 	public String getNome() {
 		return nome;
@@ -34,12 +36,18 @@ public class Time {
 	public int getAssistencias() {
 		return assistencias;
 	}
+	
+	public List<Jogador> getJogadoresTime() {
+		return jogadoresTime;
+	}
+	
 	public Time(String nome, List<Jogador> jogadores) {
 		this.nome = nome;
 		this.jogadores = jogadores;
 		this.golsMarcados  = getQuantidadeDeGolsFeitos();
 		this.cartoesAmarelos = getCartoesAmarelosTomados();
 		this.assistencias = getAssistenciasFeitas();
+		this.jogadoresTime = getJogadoresTimeAtual();
 	}
 	
 	private int getQuantidadeDeGolsFeitos() {
@@ -61,5 +69,11 @@ public class Time {
 				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(this.nome))
 				.mapToInt(Jogador::getAssistencias)
 				.sum();
+	}
+	
+	private List<Jogador> getJogadoresTimeAtual() {
+		return this.jogadores.stream()
+				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(nome))
+				.collect(Collectors.toList());
 	}
 }
