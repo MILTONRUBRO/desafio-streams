@@ -325,5 +325,16 @@ public class JogadorServiceImpl implements JogadorService {
 				.sum();
 				
 	}
+
+	@Override
+	public Jogador getJogadorComMenosCartoes(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.sorted(Comparator.comparing(Jogador::getCartoesAmarelo)
+						.thenComparing(Jogador::getGolsMarcados))
+				.findFirst()
+				.orElseThrow(NoSuchElementException::new);
+	}
+	
+	
 	
 }
