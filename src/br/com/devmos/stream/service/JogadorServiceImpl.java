@@ -334,6 +334,14 @@ public class JogadorServiceImpl implements JogadorService {
 				.findFirst()
 				.orElseThrow(NoSuchElementException::new);
 	}
+
+	@Override
+	public List<Jogador> ordenarJogadorPelosCartoesAmarelos(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.sorted(Comparator.comparing(Jogador::getCartoesAmarelo).reversed()
+						.thenComparing(Comparator.comparing(Jogador::getNome)))
+				.collect(Collectors.toList());
+	}
 	
 	
 	
