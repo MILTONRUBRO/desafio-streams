@@ -52,6 +52,8 @@ public class JogadorServiceImpl implements JogadorService {
 			jogador.setGolsMarcados(Integer.parseInt(info[4]));
 			jogador.setAssistencias(Integer.parseInt(info[5]));
 			jogador.setCartoesAmarelo(Integer.parseInt(info[6]));
+			jogador.setCartoesVermelho(Integer.parseInt(info[7]));
+			
 			listaDeJogadores.add(jogador);
 		}
 
@@ -341,6 +343,13 @@ public class JogadorServiceImpl implements JogadorService {
 				.sorted(Comparator.comparing(Jogador::getCartoesAmarelo).reversed()
 						.thenComparing(Comparator.comparing(Jogador::getNome)))
 				.collect(Collectors.toList());
+	}
+
+	@Override
+	public Jogador getJogadorComMaisExpulsoes(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.max(Comparator.comparing(Jogador::getCartoesVermelho))
+				.orElseThrow(NoSuchElementException::new);
 	}
 	
 	

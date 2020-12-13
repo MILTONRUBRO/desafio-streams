@@ -9,6 +9,7 @@ public class Jogador {
 	private int golsMarcados;
 	private int assistencias;
 	private int cartoesAmarelo;
+	private int cartoesVermelho;
 
 	public String getNome() {
 		return nome;
@@ -65,6 +66,14 @@ public class Jogador {
 	public void setCartoesAmarelo(int cartoesAmarelo) {
 		this.cartoesAmarelo = cartoesAmarelo;
 	}
+	
+	public int getCartoesVermelho() {
+		return cartoesVermelho;
+	}
+
+	public void setCartoesVermelho(int cartoesVermelho) {
+		this.cartoesVermelho = cartoesVermelho;
+	}
 
 	public Jogador(String nome, String posicao, int idade, String timeAtual, int golsMarcados) {
 		this.nome = nome;
@@ -88,6 +97,19 @@ public class Jogador {
 		this.assistencias = assistencias;
 		this.cartoesAmarelo = cartoesAmarelo;
 	}
+	
+	public Jogador(String nome, String posicao, int idade, String timeAtual, int golsMarcados, int assistencias,
+			int cartoesAmarelo, int cartoesVermelho) {
+		super();
+		this.nome = nome;
+		this.posicao = posicao;
+		this.idade = idade;
+		this.timeAtual = timeAtual;
+		this.golsMarcados = golsMarcados;
+		this.assistencias = assistencias;
+		this.cartoesAmarelo = cartoesAmarelo;
+		this.cartoesVermelho = cartoesVermelho;
+	}
 
 	public Jogador() {
 
@@ -99,6 +121,7 @@ public class Jogador {
 		int result = 1;
 		result = prime * result + assistencias;
 		result = prime * result + cartoesAmarelo;
+		result = prime * result + cartoesVermelho;
 		result = prime * result + golsMarcados;
 		result = prime * result + idade;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
@@ -119,6 +142,8 @@ public class Jogador {
 		if (assistencias != other.assistencias)
 			return false;
 		if (cartoesAmarelo != other.cartoesAmarelo)
+			return false;
+		if (cartoesVermelho != other.cartoesVermelho)
 			return false;
 		if (golsMarcados != other.golsMarcados)
 			return false;
@@ -146,7 +171,6 @@ public class Jogador {
 	public String toString() {
 		return "Jogador [nome=" + nome + ", posicao=" + posicao + ", idade=" + idade + ", timeAtual=" + timeAtual
 				+ ", golsMarcados=" + golsMarcados + ", assistencias=" + assistencias + ", cartoesAmarelo="
-				+ cartoesAmarelo + "]";
+				+ cartoesAmarelo + ", cartoesVermelho=" + cartoesVermelho + "]";
 	}
-	
 }

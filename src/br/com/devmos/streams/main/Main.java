@@ -48,6 +48,8 @@ public class Main {
 			System.out.println("Jogadores com mais cartões amarelos " + jogImpl.getListaJogadoresComMaisCartoesAmarelos(listaDeJogadores));
 
 			System.out.println("Santos marcou " + santos.getGolsMarcados() + " gols");
+			
+			System.out.println("Jogador com mais expulsões eh " + jogImpl.getJogadorComMaisExpulsoes(listaDeJogadores));
 		}
 	}
 
