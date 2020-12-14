@@ -43,6 +43,7 @@ public interface JogadorService {
 	double getMediaDeCartoesAmarelos(List<Jogador> jogadores);
 	int getQuantidadeGols(List<Jogador> jogadores);
 	int getQuantidadeCartoesAmarelos(List<Jogador> jogadores);
+	int getQuantidadeCartoesVermelhos(List<Jogador> jogadores);
 	int getQuantidadeAssitencias(List<Jogador> jogadores);
 	int getAssitenciasPorTime(List<Jogador> jogadores, String time);
 	int getGolsMarcadosPorTime(List<Jogador> jogadores, String time);

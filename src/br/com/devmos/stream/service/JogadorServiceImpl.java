@@ -351,7 +351,11 @@ public class JogadorServiceImpl implements JogadorService {
 				.max(Comparator.comparing(Jogador::getCartoesVermelho))
 				.orElseThrow(NoSuchElementException::new);
 	}
-	
-	
-	
+
+	@Override
+	public int getQuantidadeCartoesVermelhos(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.mapToInt(Jogador::getCartoesVermelho)
+				.sum();
+	}
 }
