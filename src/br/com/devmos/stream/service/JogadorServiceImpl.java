@@ -358,4 +358,12 @@ public class JogadorServiceImpl implements JogadorService {
 				.mapToInt(Jogador::getCartoesVermelho)
 				.sum();
 	}
+
+	@Override
+	public Jogador getJogadorComMaisExpulsoesPorTime(List<Jogador> jogadores, String time) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getTimeAtual().equalsIgnoreCase(time))
+				.max(Comparator.comparing(Jogador::getCartoesVermelho).reversed())
+				.orElseThrow(NoSuchElementException::new);
+	}
 }
