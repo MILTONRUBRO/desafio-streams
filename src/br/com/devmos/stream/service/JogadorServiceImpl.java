@@ -366,4 +366,13 @@ public class JogadorServiceImpl implements JogadorService {
 				.max(Comparator.comparing(Jogador::getCartoesVermelho).reversed())
 				.orElseThrow(NoSuchElementException::new);
 	}
+
+	@Override
+	public int buscaCartoeseVermelhosPorJogador(List<Jogador> jogadores, String nome) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getNome().equalsIgnoreCase(nome))
+				.mapToInt(Jogador::getCartoesVermelho)
+				.max()
+				.orElse(0);
+	}
 }

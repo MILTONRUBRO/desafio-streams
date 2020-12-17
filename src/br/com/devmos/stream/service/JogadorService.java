@@ -50,5 +50,7 @@ public interface JogadorService {
 	int getGolsMarcadosPorTime(List<Jogador> jogadores, String time);
 	int getCartoesAmarelosPorTime(List<Jogador> jogadores, String time);
 	int buscaCartoesAmarelosPorJogador(List<Jogador> jogadores, String nome);
+	int buscaCartoeseVermelhosPorJogador(List<Jogador> jogadores, String nome);
+
 
 }
