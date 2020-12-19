@@ -52,6 +52,7 @@ public interface JogadorService {
 	int getCartoesAmarelosPorTime(List<Jogador> jogadores, String time);
 	int buscaCartoesAmarelosPorJogador(List<Jogador> jogadores, String nome);
 	int buscaCartoeseVermelhosPorJogador(List<Jogador> jogadores, String nome);
+	int gettotalCartoesVermelho(List<Jogador> jogadores);
 
 
 }

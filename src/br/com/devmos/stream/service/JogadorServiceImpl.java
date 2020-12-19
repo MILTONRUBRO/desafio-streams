@@ -383,4 +383,11 @@ public class JogadorServiceImpl implements JogadorService {
 				.findFirst()
 				.orElseThrow(NoSuchElementException::new);
 	}
+
+	@Override
+	public int gettotalCartoesVermelho(List<Jogador> jogadores) {
+		return jogadores.stream()
+				.mapToInt(Jogador::getCartoesVermelho)
+				.sum();
+	}
 }
