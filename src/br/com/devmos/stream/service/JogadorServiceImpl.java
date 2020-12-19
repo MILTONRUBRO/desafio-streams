@@ -375,4 +375,12 @@ public class JogadorServiceImpl implements JogadorService {
 				.max()
 				.orElse(0);
 	}
+
+	@Override
+	public Jogador getJogadorComMenosCartoes(List<Jogador> jogadores, int cartoesVermelhos) {
+		return jogadores.stream()
+				.filter(jogador -> jogador.getCartoesVermelho() == cartoesVermelhos)
+				.findFirst()
+				.orElseThrow(NoSuchElementException::new);
+	}
 }
