@@ -1,1 +1,1 @@
-Repositório de codigos utilizando streams do java
+Repositório de codigos para testes e aprendizado utilizando streams do java
